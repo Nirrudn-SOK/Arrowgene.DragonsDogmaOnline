@@ -135,6 +135,18 @@ public class Mixin : IExpMixin
             xp *= 8.0f;
         }
 
+        //Custom enemy XP multiplier table for Dogma Rising
+        Dictionary<EnemyId, double> xpMap = new Dictionary<EnemyId, double>()
+        {
+            [EnemyId.GoblinFighter0] = 2.0f,
+            [EnemyId.Goblin] = 0.1f
+        };
+        if (xpMap.ContainsKey((EnemyId)enemy.EnemyId))
+        {
+            xp *= xpMap[(EnemyId)enemy.EnemyId];
+        }
+        //End of Dogma Rising custom code
+
         double questModifier = 1.0;
         if (enemy.QuestScheduleId != 0)
         {
