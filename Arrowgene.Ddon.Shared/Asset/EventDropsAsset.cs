@@ -12,6 +12,7 @@ namespace Arrowgene.Ddon.Shared.Asset
             EnemyIds = new HashSet<uint>();
             RequiredItemsEquipped = new HashSet<uint>();
             ItemConstraint = EventItemConstraint.None;
+            RequiredSpecies = Species.Any;
         }
 
         public uint ItemId { get; set; }
