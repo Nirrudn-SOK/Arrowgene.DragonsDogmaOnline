@@ -99,10 +99,24 @@ namespace Arrowgene.Ddon.Shared.AssetReader
                         }
                     }
 
+                    eventItem.RequiredSpecies = Species.Any;
+                    if (jRequirements.TryGetProperty("enemy_species", out JsonElement jEnemySpecies))
+                    {
+                        if (Enum.TryParse(jEnemySpecies.GetString(), true, out Species species))
+                        {
+                            eventItem.RequiredSpecies = species;
+                        }
+                        else
+                        {
+                            Logger.Error("Failed to parse the 'enemy_species' value.");
+                            continue;
+                        }
+                    }
+
                     eventItem.EmLvConstraint = EventItemConstraint.None;
                     if (jRequirements.TryGetProperty("enemy_level", out JsonElement jEnemyLevel))
                     {
-                        if (!Enum.TryParse(jEnemyLevel.GetProperty("constraint").ToString(), out eventItem.EmLvConstraint))
+                        if (!Enum.TryParse(jEnemyLevel.GetProperty("constraint").ToString(), true, out eventItem.EmLvConstraint))
                         {
                             Logger.Error("Required element 'constraint' does not exist or is an invalid value.");
                             continue;
@@ -122,7 +136,7 @@ namespace Arrowgene.Ddon.Shared.AssetReader
                         }
 
                         uint Lv = 0;
-                        if (jEnemyLevel.TryGetProperty("min_lv", out JsonElement jEmLv))
+                        if (jEnemyLevel.TryGetProperty("lv", out JsonElement jEmLv))
                         {
                             Lv = jEmLv.GetUInt32();
                         }
