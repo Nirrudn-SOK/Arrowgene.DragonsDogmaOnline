@@ -1,4 +1,6 @@
 using Arrowgene.Ddon.GameServer.Characters;
+using Arrowgene.Ddon.GameServer.Scripting;
+using Arrowgene.Ddon.Server.Scripting;
 using Arrowgene.Ddon.Shared.Asset;
 using Arrowgene.Ddon.Shared.Model;
 using System;
@@ -88,6 +90,16 @@ namespace Arrowgene.Ddon.GameServer.GatheringItems.Generators
                 return false;
             }
 
+            if (item.RequiredSpecies != Species.Any && !enemy.IsSpecies(item.RequiredSpecies))
+            {
+                return false;
+            }
+
+            if (item.Event.Key != "" && !IsEventActive(item))
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -157,6 +169,23 @@ namespace Arrowgene.Ddon.GameServer.GatheringItems.Generators
                 }
             }
             return results;
+        }
+
+        private bool IsEventActive(EventItem item)
+        {
+            string enableKey = "Enable" + item.Event.Key + "Event";
+            string periodKey =  item.Event.Key + "ValidPeriod";
+            string yearKey = item.Event.Key + "EventYear";
+            var timespan = LibDdon.GetSetting<(DateTime, DateTime)>("SeasonalEventSettings", periodKey);
+
+            if (Server.GameSettings.Get<bool>("SeasonalEventSettings", enableKey) &&
+                Server.GameSettings.Get<uint>("SeasonalEventSettings", yearKey) == item.Event.Year &&
+                LibUtils.WithinTimespan(timespan))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
