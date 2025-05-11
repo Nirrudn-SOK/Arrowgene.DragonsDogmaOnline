@@ -51,6 +51,22 @@ namespace Arrowgene.Ddon.Shared.AssetReader
                     }
                 }
 
+                string eventKey = "";
+                uint eventYear = 0;
+                if (jEventItem.TryGetProperty("event", out JsonElement jEventDetails))
+                {
+                    if (jEventDetails.TryGetProperty("key", out JsonElement jEventKey))
+                    {
+                        eventKey = jEventKey.ToString();
+                    }
+
+                    if (jEventDetails.TryGetProperty("year", out JsonElement jEventYear))
+                    {
+                        eventYear = jEventYear.GetUInt32();
+                    }
+                }
+                eventItem.Event = (eventKey, eventYear);
+
                 if (jEventItem.TryGetProperty("requirements", out JsonElement jRequirements))
                 {
                     eventItem.RequiresLanternLit = false;
