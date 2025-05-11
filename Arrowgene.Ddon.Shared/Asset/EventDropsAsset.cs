@@ -34,6 +34,7 @@ namespace Arrowgene.Ddon.Shared.Asset
         public EventItemConstraint ItemConstraint { get; set; }
         public HashSet<uint> RequiredItemsEquipped { get; set; }
         public Species RequiredSpecies { get; set; }
+        public (string Key, uint Year) Event { get; set; }
     }
 
     public class EventDropsAsset
