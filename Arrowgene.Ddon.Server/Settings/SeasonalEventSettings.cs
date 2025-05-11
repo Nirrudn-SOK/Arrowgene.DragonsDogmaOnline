@@ -203,5 +203,57 @@ namespace Arrowgene.Ddon.Server.Settings
             }
         }
         private const uint _ValentinesEventYear = 2017;
+
+        /// <summary>
+        /// Used to determine if the Monster Hunter Seasonal event is enabled or not.
+        /// </summary>
+        [DefaultValue(_EnableMonsterHunterEvent)]
+        public bool EnableMonsterHunterEvent
+        {
+            set
+            {
+                SetSetting("EnableMonsterHunterEvent", value);
+            }
+            get
+            {
+                return TryGetSetting("EnableMonsterHunterEvent", _EnableMonsterHunterEvent);
+            }
+        }
+        private const bool _EnableMonsterHunterEvent = true;
+
+        /// <summary>
+        /// The daterange that the Monster Hunter event should be available
+        /// if EnableMonsterHunterEvent is set to true. The format is in MM/DD.
+        /// </summary>
+        [DefaultValue("LibUtils.EventTimespan(\"4/27\", \"5/18\")")]
+        public (DateTime StartDate, DateTime EndDate) MonsterHunterValidPeriod
+        {
+            set
+            {
+                SetSetting("MonsterHunterValidPeriod", value);
+            }
+            get
+            {
+                return TryGetSetting("MonsterHunterValidPeriod", LibUtils.EventTimespan("4/27", "5/18"));
+            }
+        }
+
+        /// <summary>
+        /// This option configures which version will be used when
+        /// the setting EnableMonsterHunterEvent is set to true.
+        /// </summary>
+        [DefaultValue(_MonsterHunterEventYear)]
+        public uint MonsterHunterEventYear
+        {
+            set
+            {
+                SetSetting("MonsterHunterEventYear", value);
+            }
+            get
+            {
+                return TryGetSetting("MonsterHunterEventYear", _MonsterHunterEventYear);
+            }
+        }
+        private const uint _MonsterHunterEventYear = 2017;
     }
 }
