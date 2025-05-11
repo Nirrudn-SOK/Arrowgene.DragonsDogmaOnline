@@ -122,6 +122,76 @@
         "quest_ids": [60200026],
         "stage_ids": [],
         "enemy_ids": []
+    },
+    {
+        "item_id": 13491,
+        "comment": "Authentication Orb (Rathalos) (Monster Hunter 2017)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "key": "MonsterHunter",
+            "year": 2017
+        }
+    },
+    {
+        "item_id": 13492,
+        "comment": "Authentication Orb (Rathian) (Monster Hunter 2017)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "key": "MonsterHunter",
+            "year": 2017
+        }
+    },
+    {
+        "item_id": 16833,
+        "comment": "Silver Authentication Orb (Monster Hunter 2017)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "key": "MonsterHunter",
+            "year": 2017
+        },
+        "requirements": {
+            "enemy_species": "dragonkin",
+            "enemy_level": {
+                "constraint": "greaterthanorequal",
+                "lv": 51
+            }
+        }
+    },
+    {
+        "item_id": 16834,
+        "comment": "Gold Authentication Orb (Monster Hunter 2017)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "key": "MonsterHunter",
+            "year": 2017
+        },
+        "requirements": {
+            "enemy_species": "dragonkin",
+            "enemy_level": {
+                "constraint": "greaterthanorequal",
+                "lv": 51
+            }
+        }
     }
 ]
 
