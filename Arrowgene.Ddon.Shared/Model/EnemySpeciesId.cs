@@ -43,6 +43,11 @@ namespace Arrowgene.Ddon.Shared.Model
             return enemyId.GetSpecies() == species;
         }
 
+        public static bool IsSpecies(this Enemy enemy, Species species)
+        {
+            return GetSpecies((EnemyId)enemy.EnemyId) == species;
+        }
+
         public static List<EnemyId> GetEnemies(this Species species)
         {
             List<EnemyId> list = new List<EnemyId>();
