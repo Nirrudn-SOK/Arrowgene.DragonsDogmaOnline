@@ -23,7 +23,8 @@ namespace Arrowgene.Ddon.Shared.Model
         Skeletal,
         Undead,
         Winged,
-        WarReady
+        WarReady,
+        Any
     }
 
     public static class EnemySpeciesId
