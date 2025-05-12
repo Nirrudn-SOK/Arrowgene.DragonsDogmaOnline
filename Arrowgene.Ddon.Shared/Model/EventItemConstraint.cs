@@ -18,5 +18,6 @@ namespace Arrowgene.Ddon.Shared.Model
         InRange,            // The Value is in the range [a, b]
         IsBoss,
         IsNotBoss,
+        Each,               // The value is boosted by +a for each item worn
     }
 }
