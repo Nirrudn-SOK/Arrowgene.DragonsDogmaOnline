@@ -125,7 +125,7 @@
     },
     {
         "item_id": 13491,
-        "comment": "Authentication Orb (Rathalos) (Monster Hunter 2017)",
+        "comment": "Authentication Orb (Rathalos)",
         "min_num": 1,
         "max_num": 1,
         "drop_chance": 0.30,
@@ -133,24 +133,37 @@
         "stage_ids": [],
         "enemy_ids": [],
         "event": {
-            "key": "MonsterHunter",
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
+            "year": 2017
+        }
+    },
+    {
+        "item_id": 13491,
+        "comment": "Authentication Orb (Rathalos) (Extra Drop Chance)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
             "year": 2017
         },
-        "boosts": {
-            "dropchance": {
-                "amount": 0.1,
-                "requirements": {
-                    "items_equipped": {
-                        "constraint": "each",
-                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
-                    }
-                }
+        "requirements": {
+            "items_equipped": {
+                "constraint": "atleastone",
+                "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
             }
         }
     },
     {
         "item_id": 13492,
-        "comment": "Authentication Orb (Rathian) (Monster Hunter 2017)",
+        "comment": "Authentication Orb (Rathian)",
         "min_num": 1,
         "max_num": 1,
         "drop_chance": 0.30,
@@ -158,24 +171,37 @@
         "stage_ids": [],
         "enemy_ids": [],
         "event": {
-            "key": "MonsterHunter",
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
+            "year": 2017
+        }
+    },
+    {
+        "item_id": 13492,
+        "comment": "Authentication Orb (Rathian) (Extra Drop Chance)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
             "year": 2017
         },
-        "boosts": {
-            "dropchance": {
-                "amount": 0.1,
-                "requirements": {
-                    "items_equipped": {
-                        "constraint": "each",
-                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
-                    }
-                }
+        "requirements": {
+            "items_equipped": {
+                "constraint": "atleastone",
+                "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
             }
         }
     },
     {
         "item_id": 16833,
-        "comment": "Silver Authentication Orb (Monster Hunter 2017)",
+        "comment": "Silver Authentication Orb",
         "min_num": 1,
         "max_num": 1,
         "drop_chance": 0.30,
@@ -183,19 +209,60 @@
         "stage_ids": [],
         "enemy_ids": [],
         "event": {
-            "key": "MonsterHunter",
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
             "year": 2017
         },
-        "boosts": {
-            "dropchance": {
-                "amount": 0.1,
-                "requirements": {
-                    "items_equipped": {
-                        "constraint": "each",
-                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
-                    }
-                }
+        "requirements": {
+            "enemy_species": "dragonkin",
+            "enemy_level": {
+                "constraint": "greaterthanorequal",
+                "lv": 51
             }
+        }
+    },
+    {
+        "item_id": 16833,
+        "comment": "Silver Authentication Orb (Extra Drop Chance)",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
+            "year": 2017
+        },
+        "requirements": {
+            "enemy_species": "dragonkin",
+            "enemy_level": {
+                "constraint": "greaterthanorequal",
+                "lv": 51
+            },
+            "items_equipped": {
+                "constraint": "atleastone",
+                "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
+            }
+        }
+    },
+    {
+        "item_id": 16834,
+        "comment": "Gold Authentication Orb",
+        "min_num": 1,
+        "max_num": 1,
+        "drop_chance": 0.30,
+        "quest_ids": [],
+        "stage_ids": [],
+        "enemy_ids": [],
+        "event": {
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
+            "year": 2017
         },
         "requirements": {
             "enemy_species": "dragonkin",
@@ -207,7 +274,7 @@
     },
     {
         "item_id": 16834,
-        "comment": "Gold Authentication Orb (Monster Hunter 2017)",
+        "comment": "Gold Authentication Orb (Extra Drop Chance)",
         "min_num": 1,
         "max_num": 1,
         "drop_chance": 0.30,
@@ -215,25 +282,20 @@
         "stage_ids": [],
         "enemy_ids": [],
         "event": {
-            "key": "MonsterHunter",
+            "enable_key": "EnableMonsterHunterEvent",
+            "year_key": "MonsterHunterEventYear",
+            "period_key": "MonsterHunterValidPeriod",
             "year": 2017
-        },
-        "boosts": {
-            "dropchance": {
-                "amount": 0.1,
-                "requirements": {
-                    "items_equipped": {
-                        "constraint": "each",
-                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
-                    }
-                }
-            }
         },
         "requirements": {
             "enemy_species": "dragonkin",
             "enemy_level": {
                 "constraint": "greaterthanorequal",
                 "lv": 51
+            },
+            "items_equipped": {
+                "constraint": "atleastone",
+                "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
             }
         }
     }
