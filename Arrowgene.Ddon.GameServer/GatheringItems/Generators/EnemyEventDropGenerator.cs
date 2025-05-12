@@ -94,7 +94,7 @@ namespace Arrowgene.Ddon.GameServer.GatheringItems.Generators
                 return false;
             }
 
-            if (item.Event.Key != "" && !IsEventActive(item))
+            if (item.Event.EnableKey != "" && !IsEventActive(item))
             {
                 return false;
             }
