@@ -135,6 +135,17 @@
         "event": {
             "key": "MonsterHunter",
             "year": 2017
+        },
+        "boosts": {
+            "dropchance": {
+                "amount": 0.1,
+                "requirements": {
+                    "items_equipped": {
+                        "constraint": "each",
+                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
+                    }
+                }
+            }
         }
     },
     {
@@ -149,6 +160,17 @@
         "event": {
             "key": "MonsterHunter",
             "year": 2017
+        },
+        "boosts": {
+            "dropchance": {
+                "amount": 0.1,
+                "requirements": {
+                    "items_equipped": {
+                        "constraint": "each",
+                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
+                    }
+                }
+            }
         }
     },
     {
@@ -163,6 +185,17 @@
         "event": {
             "key": "MonsterHunter",
             "year": 2017
+        },
+        "boosts": {
+            "dropchance": {
+                "amount": 0.1,
+                "requirements": {
+                    "items_equipped": {
+                        "constraint": "each",
+                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
+                    }
+                }
+            }
         },
         "requirements": {
             "enemy_species": "dragonkin",
@@ -184,6 +217,17 @@
         "event": {
             "key": "MonsterHunter",
             "year": 2017
+        },
+        "boosts": {
+            "dropchance": {
+                "amount": 0.1,
+                "requirements": {
+                    "items_equipped": {
+                        "constraint": "each",
+                        "item_ids": [ 10687, 10692, 10697, 10702, 10707, 10712 ]
+                    }
+                }
+            }
         },
         "requirements": {
             "enemy_species": "dragonkin",
