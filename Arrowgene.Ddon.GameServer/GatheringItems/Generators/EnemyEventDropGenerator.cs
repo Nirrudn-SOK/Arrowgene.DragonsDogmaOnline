@@ -172,13 +172,10 @@ namespace Arrowgene.Ddon.GameServer.GatheringItems.Generators
 
         private bool IsEventActive(EventItem item)
         {
-            string enableKey = "Enable" + item.Event.Key + "Event";
-            string periodKey =  item.Event.Key + "ValidPeriod";
-            string yearKey = item.Event.Key + "EventYear";
-            var timespan = Server.GameSettings.Get<(DateTime, DateTime)>("SeasonalEventSettings", periodKey);
+            var timespan = Server.GameSettings.Get<(DateTime, DateTime)>("SeasonalEventSettings", item.Event.PeriodKey);
 
-            if (Server.GameSettings.Get<bool>("SeasonalEventSettings", enableKey) &&
-                Server.GameSettings.Get<uint>("SeasonalEventSettings", yearKey) == item.Event.Year &&
+            if (Server.GameSettings.Get<bool>("SeasonalEventSettings", item.Event.EnableKey) &&
+                Server.GameSettings.Get<uint>("SeasonalEventSettings", item.Event.YearKey) == item.Event.Year &&
                 LibUtils.WithinTimespan(timespan))
             {
                 return true;

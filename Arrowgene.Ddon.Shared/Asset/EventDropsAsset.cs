@@ -12,7 +12,6 @@ namespace Arrowgene.Ddon.Shared.Asset
             EnemyIds = new HashSet<uint>();
             RequiredItemsEquipped = new HashSet<uint>();
             ItemConstraint = EventItemConstraint.None;
-            RequiredSpecies = Species.Any;
         }
 
         public uint ItemId { get; set; }
@@ -34,7 +33,7 @@ namespace Arrowgene.Ddon.Shared.Asset
         public EventItemConstraint ItemConstraint { get; set; }
         public HashSet<uint> RequiredItemsEquipped { get; set; }
         public Species RequiredSpecies { get; set; }
-        public (string Key, uint Year) Event { get; set; }
+        public (string EnableKey, string PeriodKey, string YearKey, uint Year) Event { get; set; }
     }
 
     public class EventDropsAsset

@@ -51,13 +51,25 @@ namespace Arrowgene.Ddon.Shared.AssetReader
                     }
                 }
 
-                string eventKey = "";
+                string enableKey = "";
+                string periodKey = "";
+                string yearKey = "";
                 uint eventYear = 0;
                 if (jEventItem.TryGetProperty("event", out JsonElement jEventDetails))
                 {
-                    if (jEventDetails.TryGetProperty("key", out JsonElement jEventKey))
+                    if (jEventDetails.TryGetProperty("enable_key", out JsonElement jEnableKey))
                     {
-                        eventKey = jEventKey.ToString();
+                        enableKey = jEnableKey.ToString();
+                    }
+
+                    if (jEventDetails.TryGetProperty("period_key", out JsonElement jPeriodKey))
+                    {
+                        periodKey = jPeriodKey.ToString();
+                    }
+
+                    if (jEventDetails.TryGetProperty("year_key", out JsonElement jYearKey))
+                    {
+                        yearKey = jYearKey.ToString();
                     }
 
                     if (jEventDetails.TryGetProperty("year", out JsonElement jEventYear))
@@ -65,7 +77,7 @@ namespace Arrowgene.Ddon.Shared.AssetReader
                         eventYear = jEventYear.GetUInt32();
                     }
                 }
-                eventItem.Event = (eventKey, eventYear);
+                eventItem.Event = (enableKey, periodKey, yearKey, eventYear);
 
                 if (jEventItem.TryGetProperty("requirements", out JsonElement jRequirements))
                 {
